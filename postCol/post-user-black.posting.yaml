@@ -1,0 +1,14 @@
+name: Post User black
+url: 127.0.0.1:8080/user
+body:
+  content: |-
+    {
+        "login": "",
+        "email": "",
+        "password": "",
+        "phone": ""
+    }
+  content_type: application/json
+headers:
+- name: content-type
+  value: application/json

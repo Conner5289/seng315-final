@@ -1,3 +1,7 @@
-spring:
-  application:
-    name: final
+cognito:
+  client:
+    key: ${AWS_KEY}
+    secret: ${AWS_SECRET}
+    region: ${AWS_REGION}
+    poolId: ${AWS_COGNITO_POOLID}
+
