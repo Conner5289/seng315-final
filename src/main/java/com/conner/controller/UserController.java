@@ -1,6 +1,9 @@
 package com.conner.controller;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,7 +18,7 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequestMapping("user")
 @RequiredArgsConstructor
-public class userController {
+public class UserController {
     private final UserService userService;
 
     @GetMapping("hello")
@@ -28,4 +31,15 @@ public class userController {
 
         return userService.create(user);
     }
+
+    @GetMapping()
+    public List<User> getAll() {
+        return userService.getAllUsers();
+    }
+
+    @GetMapping("{userId}")
+    public User getUser(@PathVariable String userId) {
+        return userService.getUser(userId);
+    }
+
 }
